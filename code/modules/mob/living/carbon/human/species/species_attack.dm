@@ -136,3 +136,19 @@
 	delay = 20
 	eye_attack_text = "a forelimb"
 	eye_attack_text_victim = "a forelimb"
+
+/datum/unarmed_attack/punch/retractable/is_usable(mob/living/carbon/human/user, mob/living/carbon/human/target, zone)
+	. = ..()
+	if (!.)
+		return FALSE
+
+	if (user.claws_out && !user.gloves)
+		return FALSE
+
+/datum/unarmed_attack/claws/retractable/is_usable(mob/living/carbon/human/user, mob/living/carbon/human/target, zone)
+	. = ..()
+	if (!.)
+		return FALSE
+
+	if (!user.claws_out || user.gloves)
+		return FALSE

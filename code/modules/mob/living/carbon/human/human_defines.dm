@@ -112,3 +112,5 @@
 
 	var/obj/item/grab/current_grab_type 	// What type of grab they use when they grab someone.
 	var/skin_state = SKIN_NORMAL
+
+	var/claws_out = FALSE	// For Tajara.

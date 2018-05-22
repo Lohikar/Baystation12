@@ -83,7 +83,13 @@
 	tail = "tajtail"
 	tail_animation = 'icons/mob/species/tajaran/tail.dmi'
 	default_h_style = "Tajaran Ears"
-	unarmed_types = list(/datum/unarmed_attack/stomp, /datum/unarmed_attack/kick, /datum/unarmed_attack/claws, /datum/unarmed_attack/bite/sharp)
+	unarmed_types = list(
+		/datum/unarmed_attack/stomp,
+		/datum/unarmed_attack/kick,
+		/datum/unarmed_attack/claws/retractable,
+		/datum/unarmed_attack/punch/retractable,
+		/datum/unarmed_attack/bite/sharp
+	)
 	darksight_range = 8
 	darksight_tint = DARKTINT_GOOD
 	slowdown = -0.5
@@ -127,6 +133,10 @@
 	reagent_tag = IS_TAJARA
 
 	move_trail = /obj/effect/decal/cleanable/blood/tracks/paw
+
+	inherent_verbs = list(
+		/mob/living/carbon/human/proc/toggle_claws
+	)
 
 	heat_discomfort_level = 292
 	heat_discomfort_strings = list(

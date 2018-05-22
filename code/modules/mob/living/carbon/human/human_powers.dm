@@ -423,3 +423,15 @@
 			skin_state = SKIN_NORMAL
 	update_skin(1)
 
+// Tajara verbs.
+/mob/living/carbon/human/proc/toggle_claws()
+	set category = "Abilities"
+	set name = "Toggle Claws"
+	set desc = "Retract or show your claws."
+
+	if (stat)
+		to_chat(usr, "<span class='danger'>How do you propose doing that in your current state?</span>")
+		return
+
+	claws_out = !claws_out
+	to_chat(usr, "<span class='danger'>Your claws are now [claws_out ? "showing" : "retracted"].</span>")
